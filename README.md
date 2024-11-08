@@ -12,7 +12,7 @@ Union types in TypeScript allow a variable to have multiple types. This is usefu
 
 ### 💻 Syntax of Union Types
 
-```typescript
+```tsx
 let value: number | string;
 value = 20; // ✅ 
 value = "Hello"; // ✅ 
@@ -21,32 +21,32 @@ value = true; // ❌
 
 ### 📝 Explaination (Union Types)
 
-```typescript
+```tsx
 let value: number | string;
 ```
 
 - This declares a variable named `value` that can only hold a value of type number or `string`.
 - The `|` (pipe) symbol between `number` and `string` indicates that `value` is a union type, meaning it can be one type or the other.
 
-```typescript
+```tsx
 value = 20; // ✅
 ```
 
 - This assignment is valid because `20` is a `number`, which is one of the types allowed in the union (`number | string`).
 
-```typescript
+```tsx
 value = "Hello"; // ✅
 ```
 
 - This is also valid because `"Hello"` is a `string`, which is also included in the union type.
 
-```typescript
+```tsx
 value = true; // ❌
 ```
 
 - This assignment is not valid. TypeScript will throw an error:
 
-```typescript
+```tsx
 Error: Type 'boolean' is not assignable to type 'number | string'
 ```
 
@@ -61,7 +61,7 @@ Intersection types in TypeScript are used to combine multiple types into one. Th
 
 ### 💻 Syntax of Interseciton Types
 
-```typescript
+```tsx
 type Person = { name: string; age: number };
 type Employee = { employeeId: number; department: string };
 
@@ -93,7 +93,7 @@ This defines another type called `Employee` with two properties:
 - `employeeId`: a number
 - `department`: a string
 
-```typescript
+```tsx
 const manager: Person & Employee = { ... };
 ```
 
@@ -104,7 +104,7 @@ The expression `Person & Employee` is an intersection type. It means that the va
 
 Assigning a Value to manager
 
-```typescript
+```tsx
 const manager: Person & Employee = {
   name: "Alice",        // from Person
   age: 30,              // from Person
